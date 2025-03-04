@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ooca/data/models/menu_product.dart';
 import '../../controllers/order_controller.dart';
-import '../../data/models/menu_item.dart';
 
 class OrderScreen extends StatelessWidget {
   OrderScreen({super.key});
   final OrderController controller = Get.put(OrderController());
 
-  final List<MenuItem> menuItems = [
-    MenuItem("Red set", 50, Colors.red),
-    MenuItem("Green set", 40, Colors.green),
-    MenuItem("Blue set", 30, Colors.blue),
-    MenuItem("Yellow set", 50, Colors.yellow),
-    MenuItem("Pink set", 80, Colors.pink),
-    MenuItem("Purple set", 90, Colors.purple),
-    MenuItem("Orange set", 120, Colors.orange),
+  final List<MenuProduct> menuItems = [
+    MenuProduct("Red set", 50, Colors.red),
+    MenuProduct("Green set", 40, Colors.green),
+    MenuProduct("Blue set", 30, Colors.blue),
+    MenuProduct("Yellow set", 50, Colors.yellow),
+    MenuProduct("Pink set", 80, Colors.pink),
+    MenuProduct("Purple set", 90, Colors.purple),
+    MenuProduct("Orange set", 120, Colors.orange),
   ];
 
   Future _showPaymentPopup(BuildContext context) {
@@ -210,7 +210,7 @@ class OrderScreen extends StatelessWidget {
             child: FloatingActionButton(
               backgroundColor: Colors.red,
               onPressed: () {
-                controller.removeAllItem();
+                controller.removeAllProduct();
               },
               child: const Icon(Icons.delete,color: Colors.white,),
               tooltip: 'ล้างตะกร้า',
@@ -221,7 +221,7 @@ class OrderScreen extends StatelessWidget {
     );
   }
 
-  Widget buildMenuItem(MenuItem item) {
+  Widget buildMenuItem(MenuProduct item) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
       decoration: BoxDecoration(
@@ -229,7 +229,7 @@ class OrderScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(15)
       ),
       child: InkWell(
-        onTap: (){controller.addItem(item);},
+        onTap: (){controller.addProduct(item);},
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -263,12 +263,12 @@ class OrderScreen extends StatelessWidget {
               children: [
                 IconButton(
                   icon: const Icon(Icons.remove),
-                  onPressed: () => controller.removeItem(item),
+                  onPressed: () => controller.removeProduct(item),
                 ),
                 Obx(() => Text(controller.orders[item]?.toString() ?? "0")),
                 IconButton(
                   icon: const Icon(Icons.add),
-                  onPressed: () => controller.addItem(item),
+                  onPressed: () => controller.addProduct(item),
                 ),
               ],
             ),

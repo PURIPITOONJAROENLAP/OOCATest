@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Get.toNamed(AppRoutes.ORDER);
               },
-              child: const Text("Order Now", style: TextStyle(color: Colors.white),),
+              child: const Text("start your Meal!", style: TextStyle(color: Colors.white),),
             ),
           ],
         ),

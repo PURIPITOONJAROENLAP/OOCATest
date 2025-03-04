@@ -1,16 +1,17 @@
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:ooca/data/models/menu_item.dart';
+import 'package:ooca/data/models/menu_product.dart';
+
 
 class OrderController extends GetxController {
-  var orders = <MenuItem, int>{}.obs;
+  var orders = <MenuProduct, int>{}.obs;
   var hasMemberCard = false.obs;
 
-  void addItem(MenuItem item) {
+  void addProduct(MenuProduct item) {
     orders[item] = (orders[item] ?? 0) + 1;
   }
 
-  void removeItem(MenuItem item) {
+  void removeProduct(MenuProduct item) {
     if (orders.containsKey(item) && orders[item]! > 0) {
       orders[item] = orders[item]! - 1;
       if (orders[item] == 0) {
@@ -18,11 +19,11 @@ class OrderController extends GetxController {
       }
     }
   }
-  void removeAllItem() {
+  void removeAllProduct() {
     orders.clear();
   }
 
-  num calculateDiscountedPrice(MenuItem item, int quantity) {
+  num calculateDiscountedPrice(MenuProduct item, int quantity) {
     int totalPrice = item.price * quantity;
 
     if ((item.name == 'Orange set' || item.name == 'Pink set' || item.name == 'Green set') && quantity >= 2) {
