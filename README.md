@@ -1,7 +1,8 @@
 # ooca
 
-โรปเจค Food Store เขียนโดยใช้ flutter ใช้ GetX เป็น state management และใช้  Application Structure ในรูปแบบ MVVM
+This project, Food Store, is developed using Flutter with GetX as the state management solution and follows the MVVM application structure.
 
 ## Getting Started
 
-สามารถทดลอง download ได้จาก ooca.apk หรือ clone git https://github.com/PURIPITOONJAROENLAP/OOCATest.git
+You can download the APK file from ooca.apk or clone the repository from the following GitHub link: https://github.com/PURIPITOONJAROENLAP/OOCATest.git
+
