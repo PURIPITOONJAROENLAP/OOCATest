@@ -4,4 +4,4 @@
 
 ## Getting Started
 
-สามารถทดลอง download ได้จาก ooca.apk หรือ clone git
+สามารถทดลอง download ได้จาก ooca.apk หรือ clone git https://github.com/PURIPITOONJAROENLAP/OOCATest.git
